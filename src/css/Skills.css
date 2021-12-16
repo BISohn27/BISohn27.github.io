@@ -1,0 +1,36 @@
+#skillsWrap{
+    width: 100%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+#skillsHeader{
+    width:65%; 
+    padding-top:10%;
+}
+#sectionWrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 40px;
+    width: 65%;
+    height: 55%;
+    color:gray;
+}
+.articleWrap{
+    display: flex;
+    flex-direction: column;
+}
+.iconWrap{
+    width:60%;
+    padding-top:30px;
+    display: flex;
+    justify-content: space-between;
+}
+#framework{
+    width:30%;
+    display: flex;
+    justify-content: space-between;
+}

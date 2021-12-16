@@ -1,0 +1,30 @@
+#navContationer{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    width:18%;
+    height:100%;
+    position:fixed;
+    top:0%;
+    background-color:rgb(31, 31, 31);
+}
+.img-profile {
+    max-width: 10rem;
+    max-height: 10rem;
+    border: 0.5rem solid rgba(255, 255, 255, 0.2);
+}
+#navBarWrap{
+    height:60%;
+    font-size:larger;
+    font-weight:bold;
+    font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+#navBrand{
+    height:38%;
+    display:flex;
+    align-items:flex-end;
+    margin:0;
+}
+.fontWrap{
+    color:rgba(255, 255, 255, 0.822);
+}
