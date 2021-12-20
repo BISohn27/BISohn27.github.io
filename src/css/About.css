@@ -1,0 +1,51 @@
+#About{
+    width: 100%;
+    min-height: 100vh;
+    border-bottom: 1px solid lightGray;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+#aboutHeader{
+    padding-top:20px;
+    padding-left:15%;
+    padding-bottom: 30px;
+    width:100%;
+    display:flex;
+    justify-content: flex-start;
+}
+#aboutHeaderSpan{
+    padding-left: 20px;
+    padding-top: 20px;
+    color:gray;
+    display:block;
+}
+#aboutTextWrap{
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+#aboutParagraphWrap{
+    padding:30px 0;
+    width:70%;
+}
+#aboutUpperQuote, #aboutLowerQuote{
+    width:15%;
+    color: rgb(56, 56, 56);
+    font-size:3em;
+    display: flex;
+}
+#aboutUpperQuote{
+    justify-content:center;
+}
+#aboutLowerQuote{
+    flex-direction: column-reverse;
+    align-items: center;
+}
+.emphasizingFont{
+    font-weight:bolder;
+    color: maroon;
+}

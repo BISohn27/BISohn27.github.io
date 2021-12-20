@@ -18,7 +18,7 @@
   text-align:center;
 }
 .resume-section-content{
-  height:100vh;
+  min-height:100vh;
   width:100%;
   border-bottom: 1px solid lightgray;
 }
