@@ -31,9 +31,7 @@ export default function ResumeSection(){
                 <div className="resume-section-content"  id="Skills" style={{display:'flex',}}>
                     <Skills/>
                 </div>
-                <div className="resume-section-content"  id="Projects" style={{display:'flex',}}>
-                    <Project/>
-                </div>
+                <Project/>
                 <div className="resume-section-content"  id="Contact" style={{display:'flex',}}>
                 </div>
         </section>

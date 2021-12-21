@@ -1,5 +1,10 @@
-#projectWrap{
+#Projects{
+    width: 100%;
     min-height:100vh;
+    border-bottom: 1px solid lightGray;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 #projectHeader{
     padding-top:20px;
@@ -7,7 +12,12 @@
     padding-bottom:10px
 }
 .projectArticleHeader{
-    padding-top:20px;
+    padding-top:30px;
     padding-left:15%;
-    padding-bottom: 30px;
+}
+.projectContentWrap{
+    width: 100%;
+    padding-left:15%;
+    display: flex;
+    flex-wrap: wrap;
 }

@@ -1,0 +1,38 @@
+.projectImgWrap{
+    min-width:420px;
+    padding-top:30px;
+}
+.projectImg{
+    width: 420px;
+    margin-right: 5px;
+}
+.projectTextWrap{
+    height:213px;
+    position: absolute;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity:0;
+    cursor:pointer;
+    transition: all 500ms ease-in-out;
+    transform: translate(0, 20px);
+    background-color: rgba( 255, 255, 255, 0.5 );
+}
+.projectImgTextbox{
+    height:170px;
+    width:420px;
+    font-weight:bolder;
+    color:black;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.projectImgText{
+    width:420px;
+}
+.projectTextWrap:hover{
+    opacity:1;
+    transform: translate(0, 0px);
+}
