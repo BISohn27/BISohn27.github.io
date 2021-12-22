@@ -1,12 +1,25 @@
 import {useState} from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Slider from "react-slick";
+import Cards from './Cards';
 
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import '../css/ProjectImg.css';
 
 export default function ProjectImg({imgSource,text,header}) {
     const [fullscreen, setFullscreen] = useState(true);
     const [show, setShow] = useState(false);
+
+    const settings = {
+        dots:true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        
+    };
     
     const handleShow = (breakpoint) => {
         setFullscreen(breakpoint);
@@ -26,9 +39,32 @@ export default function ProjectImg({imgSource,text,header}) {
                     </Button>
                     <Modal show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Modal</Modal.Title>
+                        <Modal.Title>{header}</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>Modal body content</Modal.Body>
+                    <Modal.Body className="modalBody">
+                        <div className="sliderWrap">
+                            <Slider {...settings}>
+                                <div>
+                                    <div className="cardWrap"><Cards/></div>
+                                </div>
+                                <div>
+                                    <h3>2</h3>
+                                </div>
+                                <div>
+                                    <h3>3</h3>
+                                </div>
+                                <div>
+                                    <h3>4</h3>
+                                </div>
+                                <div>
+                                    <h3>5</h3>
+                                </div>
+                                <div>
+                                    <h3>6</h3>
+                                </div>
+                            </Slider>
+                        </div>
+                    </Modal.Body>
                     </Modal>
                 </>
             </div>
