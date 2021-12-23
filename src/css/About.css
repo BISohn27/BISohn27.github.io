@@ -6,6 +6,10 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    border-radius: 20px;
+    -webkit-box-shadow: 3px 3px 19px 0px rgba(50, 50, 50, 0.49);
+    -moz-box-shadow:    3px 3px 19px 0px rgba(50, 50, 50, 0.49);
+    box-shadow:         3px 3px 19px 0px rgba(50, 50, 50, 0.49);
 }
 #aboutHeader{
     padding-top:20px;

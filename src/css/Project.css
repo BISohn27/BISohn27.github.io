@@ -1,15 +1,17 @@
 #Projects{
     width: 100%;
     min-height:100vh;
-    border-bottom: 1px solid lightGray;
     display:flex;
     flex-direction: column;
     justify-content: flex-start;
+    border-radius: 20px;
+    -webkit-box-shadow: 3px 3px 19px 0px rgba(50, 50, 50, 0.49);
+    -moz-box-shadow:    3px 3px 19px 0px rgba(50, 50, 50, 0.49);
+    box-shadow:         3px 3px 19px 0px rgba(50, 50, 50, 0.49);
 }
 #projectHeader{
-    padding-top:20px;
+    padding-top:40px;
     padding-left:15%;
-    padding-bottom:10px
 }
 .projectArticleHeader{
     padding-top:30px;

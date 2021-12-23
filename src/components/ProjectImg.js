@@ -1,16 +1,18 @@
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Slider from "react-slick";
 import Cards from './Cards';
+import { FaGithub } from "react-icons/fa";
 
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import '../css/ProjectImg.css';
 
-export default function ProjectImg({imgSource,text,header}) {
+export default function ProjectImg({paragraph,imgSource,text,header,img,skill,contribution,title}) {
     const [fullscreen, setFullscreen] = useState(true);
     const [show, setShow] = useState(false);
+    const [imgArr,setImgArr] = useState();
 
     const settings = {
         dots:true,
@@ -26,6 +28,10 @@ export default function ProjectImg({imgSource,text,header}) {
         setShow(true);
     };
 
+    useEffect(()=>{
+        setImgArr(img);
+    },[img])
+    console.log(imgArr);
     return (
         <div className="projectImgWrap">
             <div className="projectTextWrap">
@@ -39,30 +45,49 @@ export default function ProjectImg({imgSource,text,header}) {
                     </Button>
                     <Modal show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
                     <Modal.Header closeButton>
-                        <Modal.Title>{header}</Modal.Title>
+                        <div style={{width: "100%", display:"flex", justifyContent:"space-between"}}>
+                            <Modal.Title>{header}</Modal.Title>
+                            <a href="https://github.com/BISohn27/JavaWebLearn/tree/master/shopping" target="_blank" rel="noopener noreferrer" style={{textDecoration:"none"}}><h4 className="modalIcon"><FaGithub style/></h4></a>
+                        </div>
                     </Modal.Header>
                     <Modal.Body className="modalBody">
                         <div className="sliderWrap">
                             <Slider {...settings}>
-                                <div>
-                                    <div className="cardWrap"><Cards/></div>
-                                </div>
-                                <div>
-                                    <h3>2</h3>
-                                </div>
-                                <div>
-                                    <h3>3</h3>
-                                </div>
-                                <div>
-                                    <h3>4</h3>
-                                </div>
-                                <div>
-                                    <h3>5</h3>
-                                </div>
-                                <div>
-                                    <h3>6</h3>
-                                </div>
+                                {imgArr === undefined ? null : 
+                                    imgArr.map((path,idx)=>{
+                                        return (
+                                            <div>
+                                                <div className="cardWrap"><Cards path={path}/></div>
+                                                <div style={{paddingLeft:"7%"}}>
+                                                    <h3>{title[idx]}</h3>
+                                                    <p>{paragraph[idx]}</p>
+                                                </div>
+                                            </div>
+                                        );
+                                    })
+                                }
                             </Slider>
+                            <div className="summary">
+                                <h4 className="projectDetailHeader">개요</h4>
+                                <p className="projectDetailText">skdjahlf</p>
+                            </div>
+                            <div className="stack">
+                                <h4 className="projectDetailHeader">사용 기술</h4>
+                                <p className="projectDetailText">
+                                    {skill !== undefined ? skill.map((path)=>(<img width="150px" height="100px" src={path} alt={path}/>)) : null}
+                                </p>
+                            </div>
+                            {contribution === null || contribution === undefined ? null :
+                                <div className="contribution">
+                                    <h4 className="projectDetailHeader">기여도</h4>
+                                    <p className="projectDetailText">asdfjsladf</p>
+                                </div>
+                            }
+                            <div className="learning">
+                                <h4 className="projectDetailHeader">프로젝트 소고</h4>
+                                <p className="projectDetailText">asdfjsladf</p>
+                            </div>
+                            <div style={{height:"17vh"}}></div>
                         </div>
                     </Modal.Body>
                     </Modal>
