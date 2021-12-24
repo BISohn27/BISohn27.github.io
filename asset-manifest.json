@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/BISohn27.github.io/static/css/main.461ade35.css",
+    "main.js": "/BISohn27.github.io/static/js/main.27933d7c.js",
+    "static/media/slick.svg": "/BISohn27.github.io/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/BISohn27.github.io/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/BISohn27.github.io/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/BISohn27.github.io/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/BISohn27.github.io/index.html",
+    "main.461ade35.css.map": "/BISohn27.github.io/static/css/main.461ade35.css.map",
+    "main.27933d7c.js.map": "/BISohn27.github.io/static/js/main.27933d7c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.461ade35.css",
+    "static/js/main.27933d7c.js"
+  ]
+}
