@@ -4,6 +4,28 @@ import EducationAccodion from './EducationAccodion';
 import Skills from './Skills';
 import About from './About';
 import Project from './Project';
+import {useState, useEffect} from 'react';
+
+export function TypingText({inputText}) {
+    const [text,setText] = useState('');
+    const [count,setCount] = useState(0);
+
+    useEffect(()=>{
+        const interval = setInterval(()=>{
+            setText(text + inputText[count]);
+            setCount(count + 1);
+        },300);
+        if(count === inputText.length){
+            clearInterval(interval);
+        }
+
+        return ()=>  clearInterval(interval);
+        });
+
+    return (
+        <p>{text}</p>
+    );
+};
 
 export default function ResumeSection(){
     return (
@@ -15,7 +37,7 @@ export default function ResumeSection(){
                             <span className="text-primary"> Sohn</span>
                         </h1>
                         <br/>
-                        <p>안녕하세요! </p>
+                        <TypingText inputText={'안녕하세요!'}/>
                         <p>항상 어린아이와 같은 <span>호기심</span>으로
                         <br/>세상을 바라보며,</p> 
                         <p>실패와 좌절을 딛고 일어나 

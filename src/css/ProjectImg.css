@@ -91,6 +91,7 @@
 .projectDetailText{
     padding-left: 40px;
     padding-bottom: 30px;
+    white-space: pre-wrap;
 }
 .contribution{
     width:100%;
