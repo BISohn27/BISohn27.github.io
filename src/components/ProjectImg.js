@@ -56,7 +56,7 @@ export default function ProjectImg({paragraph,imgSource,text,header,img,skill,co
                                 {imgArr === undefined ? null : 
                                     imgArr.map((path,idx)=>{
                                         return (
-                                            <div>
+                                            <div key={path}>
                                                 <div className="cardWrap"><Cards path={path}/></div>
                                                 <div style={{paddingLeft:"7%"}}>
                                                     <h3>{title[idx]}</h3>
@@ -74,7 +74,7 @@ export default function ProjectImg({paragraph,imgSource,text,header,img,skill,co
                             <div className="stack">
                                 <h4 className="projectDetailHeader">사용 기술</h4>
                                 <p className="projectDetailText">
-                                    {skill !== undefined ? skill.map((path)=>(<img width="150px" height="100px" src={path} alt={path}/>)) : null}
+                                    {skill !== undefined ? skill.map((path)=>(<img key={path} width="150px" height="100px" src={path} alt={path}/>)) : null}
                                 </p>
                             </div>
                             {contribution === null || contribution === undefined ? null :
@@ -93,7 +93,7 @@ export default function ProjectImg({paragraph,imgSource,text,header,img,skill,co
                     </Modal>
                 </>
             </div>
-            <img className="projectImg" src={`/img/${imgSource}.jpg`} alt={imgSource}/>
+            <img className="projectImg" src={process.env.PUBLIC_URL+`/img/${imgSource}.jpg`} alt={imgSource}/>
         </div>
     );
 }

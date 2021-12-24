@@ -13,14 +13,14 @@ function ControlledCarousel() {
             <Carousel activeIndex={index} onSelect={handleSelect} fade>
             <Carousel.Item interval={2000} style={{height:'100vh'}}>
                 <img
-                src="/img/20180330_101848.jpg"
+                src={process.env.PUBLIC_URL+"/img/20180330_101848.jpg"}
                 alt="First slide"
                 width="100%"
                 />
             </Carousel.Item>
             <Carousel.Item interval={2000} style={{height:'100vh'}}>
                 <img
-                src="/img/20180330_133940.jpg"
+                src={process.env.PUBLIC_URL+"/img/20180330_133940.jpg"}
                 alt="Second slide"
                 width="100%"
                 />

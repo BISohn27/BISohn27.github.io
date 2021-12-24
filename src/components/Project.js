@@ -146,7 +146,7 @@ export default function Project(){
         for(let i = 0; i<folder.length; i++){
             const temp = [];
             for(let j = 0; j< end[i]+1; j++){
-                temp.push(`/img/${folder[i]}/${j}.jpg`);
+                temp.push(process.env.PUBLIC_URL+`/img/${folder[i]}/${j}.jpg`);
             }
             tempArr.push(temp);
         }
@@ -158,7 +158,7 @@ export default function Project(){
         for(let i = 0; i<folder.length; i++){
             const temp = [];
             for(let j = 0; j< end[i]+1; j++){
-                temp.push(`/img/${folder[i]}/${j}.jpg`);
+                temp.push(process.env.PUBLIC_URL+`/img/${folder[i]}/${j}.jpg`);
             }
             tempArr.push(temp);
         }

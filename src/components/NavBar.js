@@ -7,7 +7,7 @@ export default function NavBar(){
         <Navbar bg="light" variant="dark" expand="lg" id="sideNav" style={{padding:"0"}}>
             <Container fluid id='navContationer'>
                 <Navbar.Brand href="#top" id="navBrand">
-                    <img className="img-fluid img-profile rounded-circle mx-auto mb-2" src="/img/profile.jpg" alt="..." />
+                    <img className="img-fluid img-profile rounded-circle mx-auto mb-2" src={process.env.PUBLIC_URL+"/img/profile.jpg"} alt="..." />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <div id="navBarWrap">

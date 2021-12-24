@@ -3,6 +3,7 @@ import '../css/About.css';
 import { FaQuoteLeft,FaQuoteRight } from "react-icons/fa";
 
 export default function About() {
+    console.log(process.env.PUBLIC_URL);
     return(
         <div id="About">
             <div id="aboutHeader">
@@ -15,35 +16,35 @@ export default function About() {
                 <Carousel.Item interval={3000}>
                     <img
                     className="d-block w-100"
-                    src="/img/20180529_164208.jpg"
+                    src={process.env.PUBLIC_URL + "/img/20180529_164208.jpg"}
                     alt="First slide"
                     />
                 </Carousel.Item>
                 <Carousel.Item interval={3000}>
                     <img
                     className="d-block w-100"
-                    src="/img/socialanlaysis.jpg"
+                    src={process.env.PUBLIC_URL + "/img/socialanlaysis.jpg"}
                     alt="Second slide"
                     />
                 </Carousel.Item>
                 <Carousel.Item interval={1500}>
                     <img
                     className="d-block w-100"
-                    src="/img/20180529_161935.jpg"
+                    src={process.env.PUBLIC_URL+"/img/20180529_161935.jpg"}
                     alt="Third slide"
                     />
                 </Carousel.Item>
                 <Carousel.Item interval={1500}>
                     <img
                     className="d-block w-100"
-                    src="/img/20180529_162002.jpg"
+                    src={process.env.PUBLIC_URL+"/img/20180529_162002.jpg"}
                     alt="Third slide"
                     />
                 </Carousel.Item>
                 <Carousel.Item interval={3000}>
                     <img
                     className="d-block w-100"
-                    src="/img/20180529_161626.jpg"
+                    src={process.env.PUBLIC_URL+"/img/20180529_161626.jpg"}
                     alt="Third slide"
                     />
                 </Carousel.Item>
