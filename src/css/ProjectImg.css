@@ -60,53 +60,64 @@
     width:100%;
     min-height: 15vh;
     margin-top:50px;
-    border-radius: 20px;
-    -webkit-box-shadow: 3px 3px 19px 0px rgba(50, 50, 50, 0.49);
-    -moz-box-shadow:    3px 3px 19px 0px rgba(50, 50, 50, 0.49);
-    box-shadow:         3px 3px 19px 0px rgba(50, 50, 50, 0.49);
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;;
 }
 .learning{
     width:100%;
     min-height: 15vh;
     margin-top:50px;
     border-radius: 20px;
-    -webkit-box-shadow: 3px 3px 19px 0px rgba(50, 50, 50, 0.49);
-    -moz-box-shadow:    3px 3px 19px 0px rgba(50, 50, 50, 0.49);
-    box-shadow:         3px 3px 19px 0px rgba(50, 50, 50, 0.49);
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;;
 }
 .summary{
     width:100%;
     min-height: 15vh;
-    margin-top:200px;
+    margin-top:300px;
     border-radius: 20px;
-    -webkit-box-shadow: 3px 3px 19px 0px rgba(50, 50, 50, 0.49);
-    -moz-box-shadow:    3px 3px 19px 0px rgba(50, 50, 50, 0.49);
-    box-shadow:         3px 3px 19px 0px rgba(50, 50, 50, 0.49);
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;;
 }
 .projectDetailHeader{
-    position: relative;
-    top:-15px;
-    left: 20px;
+    width:25%;
+    padding-bottom:30px;
+    font-size:x-large;
+}
+.seperator{
+    flex:1;
+    height:1rem;
+    border-bottom:1px solid lightgray;
 }
 .projectDetailText{
-    padding-left: 40px;
-    padding-bottom: 30px;
+    padding-top:20px;
+    padding-bottom: 50px;
+    width:50%;
     white-space: pre-wrap;
 }
 .contribution{
     width:100%;
     min-height: 15vh;
     margin-top:50px;
-    border-radius: 20px;
-    -webkit-box-shadow: 3px 3px 19px 0px rgba(50, 50, 50, 0.49);
-    -moz-box-shadow:    3px 3px 19px 0px rgba(50, 50, 50, 0.49);
-    box-shadow:         3px 3px 19px 0px rgba(50, 50, 50, 0.49);
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;;
 }
 .modalIcon{
     padding-right:20px;
     text-decoration: none;
-    color:black;
+    color:whitesmoke;
 }
 .modalIcon:hover{
-    color:lightgray;
+    color:lightslategray;
+}
+.modalClose:hover{
+    color:lightslategray;
 }

@@ -4,45 +4,92 @@ import EducationAccodion from './EducationAccodion';
 import Skills from './Skills';
 import About from './About';
 import Project from './Project';
-import {useState, useEffect} from 'react';
+import Contact from './Contact';
+import {useState, useEffect, useRef} from 'react';
 
-export function TypingText({inputText}) {
-    const [text,setText] = useState('');
+export function TypingText() {
+    const [text1,setText1] = useState('');
+    const [text2,setText2] = useState('');
+    const [text3,setText3] = useState('');
+    const [text4,setText4] = useState('');
+    const [text5,setText5] = useState('');
+    const [textTracker,setTextTracker] =useState(0);
     const [count,setCount] = useState(0);
+    const initialState = useRef(true);
 
-    useEffect(()=>{
-        const interval = setInterval(()=>{
-            setText(text + inputText[count]);
-            setCount(count + 1);
-        },300);
-        if(count === inputText.length){
-            clearInterval(interval);
+    const typingText = [
+        '안녕하세요!',
+    '항상 어린아이와 같은 호기심으로',
+    '세상을 바라보며,',
+    '앞으로 나아가는, 개발자가 되고픈',
+    '손병일입니다.'];
+
+    function interval(text,setText,inputText,time) {
+        if(initialState.current === true) {
+            setCount(0);
+            initialState.current = false;
         }
 
-        return ()=>  clearInterval(interval);
-        });
+        const executeInterval= setInterval(()=>{
+            setText(text + typingText[textTracker][count]);
+            setCount(count + 1);
+        },time); 
+
+        if(count === typingText[textTracker].length){
+            clearInterval(executeInterval);
+            setTextTracker(textTracker + 1);
+            initialState.current = true;
+        }
+
+        return executeInterval;
+    };
+
+    useEffect(()=>{
+        let executeInterval;
+
+        switch (textTracker) {
+            case 0 :
+                executeInterval = interval(text1,setText1,typingText[textTracker],300);
+                return ()=>  clearInterval(executeInterval);
+            case 1 : 
+                executeInterval = interval(text2,setText2,typingText[textTracker],150);
+                return ()=>  clearInterval(executeInterval);
+            case 2 :
+                executeInterval = interval(text3,setText3,typingText[textTracker],150);
+                return ()=>  clearInterval(executeInterval);
+            case 3 :
+                executeInterval = interval(text4,setText4,typingText[textTracker],150);
+                return ()=>  clearInterval(executeInterval);
+            case 4 :
+                executeInterval = interval(text5,setText5,typingText[textTracker],400);
+                return ()=>  clearInterval(executeInterval);
+            default : 
+        }
+    });
 
     return (
-        <p>{text}</p>
+        <>
+            <p style={{color: "orange", fontSize:"x-large"}}>{text1}<span className = {textTracker ===0 ? "typing" : "typingInactive"}>|</span></p>
+            <p style={{color: "whitesmoke", fontSize:"large"}}>{text2}<span className={textTracker === 1 ? "typing" : "typingInactive"}>|</span></p>
+            <p style={{color: "whitesmoke", fontSize:"large"}}>{text3}<span className={textTracker === 2 ? "typing" : "typingInactive"}>|</span></p>
+            <p style={{color: "whitesmoke", fontSize:"large"}}>{text4}<span className={textTracker === 3 ? "typing" : "typingInactive"}>|</span></p>
+            <p style={{color: "lightblue", fontSize:"x-large"}}>{text5}<span className={textTracker ===4 ? "typing" : "typingInactive"}>|</span></p>
+        </>
     );
 };
 
 export default function ResumeSection(){
+
     return (
         <section className="resume-section">
-                <div className="resume-section-content"  id="top" style={{display:'flex',}}>
+                <div id="top">
                     <div id="GreetingWrap">
                         <h1 className="nameWrap">
                             Byungil
                             <span className="text-primary"> Sohn</span>
                         </h1>
                         <br/>
-                        <TypingText inputText={'안녕하세요!'}/>
-                        <p>항상 어린아이와 같은 <span>호기심</span>으로
-                        <br/>세상을 바라보며,</p> 
-                        <p>실패와 좌절을 딛고 일어나 
-                            <br/><span>앞으로 나아가는</span> 개발자가 되고픈</p> 
-                        <p><span>손병일</span>입니다.</p>
+                        <TypingText/>
                     </div>
                     <ControlledCarousel/>
                 </div>
@@ -54,8 +101,7 @@ export default function ResumeSection(){
                     <Skills/>
                 </div>
                 <Project/>
-                <div className="resume-section-content"  id="Contact" style={{display:'flex',}}>
-                </div>
+                <Contact/>
         </section>
     );
 }

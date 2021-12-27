@@ -1,0 +1,76 @@
+#contactWrap{
+    height:100vh;
+    width:100%;
+    border-bottom: 1px solid lightgray;
+    border-radius: 20px;
+    position:relative;
+    z-index:1;
+    -webkit-box-shadow: 3px 3px 19px 0px rgba(50, 50, 50, 0.49);
+    -moz-box-shadow:    3px 3px 19px 0px rgba(50, 50, 50, 0.49);
+    box-shadow:         3px 3px 19px 0px rgba(50, 50, 50, 0.49);
+}
+#contactWrap:after{
+    width: 100%;
+    height: 100vh;
+    content: "";
+    background: url("/public/img/swiss.jpg");
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    opacity:0.4;
+    z-index: -1;
+    background-size: cover;
+}
+#contactHeader{
+    padding-top:15%;
+    padding-left:15%;
+    padding-bottom: 30px;
+    width:100%;
+    font-weight:bolder;
+}
+#textField{
+    height:40%;
+    width:50%;
+    margin-left:15%;
+    background-color:rgb(235, 235, 235,0.7);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid darkgray;
+    border-radius:5px;
+}
+.contactLabel{
+    width:20%;
+    height: 100%;
+    background-color: rgb(202, 206, 209);
+    font-size: xx-large;
+    font-family:sans-serif;
+    border-top: 1px solid darkgray;
+    border-right: 1px solid darkgray;
+    border-left:1px solid darkgray;
+    border-bottom: 1px solid darkgray;
+    border-radius: 5px 0 0 5px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.textArea{
+    width:50%;
+    height:100%;
+    font-size: large;
+    background-color: whitesmoke;
+    border-right: 1px;
+    border-radius: 0 5px 5px 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#gitLink{
+    text-decoration: none;
+    color:black;
+}
+#gitLink:hover{
+    color:gray;
+}

@@ -1,11 +1,41 @@
 import {Navbar,Container,Nav} from 'react-bootstrap';
+import {useState,useEffect} from 'react';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/NavBar.css';
 
 export default function NavBar(){
+    const [scrollY,setScrollY] = useState(0);
+    const [navActive, setNavActive] = useState(false);
+
+    const watch= () => {
+        window.addEventListener('scroll', handleScroll);
+    };
+    const handleScroll = () => {
+        setScrollY(window.scrollY);
+        if(scrollY > 100) {
+            setNavActive(true);
+        } else{
+            setNavActive(false);
+        }
+    };
+    const clickTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+        setScrollY(0);
+        setNavActive(false);
+    };
+    
+    useEffect(()=>{
+        watch();
+        return () => {window.removeEventListener('scroll',handleScroll)};
+    });
+    
     return(
         <Navbar bg="light" variant="dark" expand="lg" id="sideNav" style={{padding:"0"}}>
-            <Container fluid id='navContationer'>
+            <Container fluid id={navActive ? "navContainer" : "navContainerInactive"}>
                 <Navbar.Brand href="#top" id="navBrand">
                     <img className="img-fluid img-profile rounded-circle mx-auto mb-2" src={process.env.PUBLIC_URL+"/img/profile.jpg"} alt="..." />
                 </Navbar.Brand>
@@ -13,8 +43,7 @@ export default function NavBar(){
                 <div id="navBarWrap">
                     <Navbar.Collapse id="navbarScroll" className="navWrap">
                         <Nav
-                            className="flex-column"
-                            style={{ maxWidth: '100px',}}
+                            id="navWrap"
                             navbarScroll
                         >
                             <Nav.Link href="#About"><span className="fontWrap">About</span></Nav.Link>

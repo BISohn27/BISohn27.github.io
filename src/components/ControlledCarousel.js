@@ -9,13 +9,14 @@ function ControlledCarousel() {
     };
 
     return (
-        <Container style={{padding:"0", height:'100vh'}} fluid>
+        <Container style={{height:'100vh',padding:"0"}} fluid id="mainCarousel">
             <Carousel activeIndex={index} onSelect={handleSelect} fade>
             <Carousel.Item interval={2000} style={{height:'100vh'}}>
                 <img
                 src={process.env.PUBLIC_URL+"/img/20180330_101848.jpg"}
                 alt="First slide"
                 width="100%"
+                style={{objectFit:"contain"}}
                 />
             </Carousel.Item>
             <Carousel.Item interval={2000} style={{height:'100vh'}}>

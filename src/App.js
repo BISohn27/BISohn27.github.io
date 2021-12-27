@@ -1,9 +1,11 @@
 import NavBar from './components/NavBar';
 import ResumeSection from './components/ResumeSection';
 
+import './css/ResumeSection.css';
+
 function App() {
   return (
-    <div className="App" Style={{width:'100%',}}>
+    <div className="App">
       <NavBar/>
       <ResumeSection/>
     </div>

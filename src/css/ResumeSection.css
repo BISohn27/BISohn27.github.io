@@ -3,15 +3,25 @@
   justify-content:center;
   align-items: center;
   flex-direction: column;
-  padding-left: 18%;
-  max-width: 100%;
+  width:100%;
   font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+#top{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  width:100%;
+  background-color:rgb(24, 24, 24);
+  color:whitesmoke;
 }
 .textWrap{
   width:100%;
 }
+#typing{
+  white-space: pre-wrap;
+}
 #GreetingWrap{
-  width:77%;
+  width:100%;
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -26,3 +36,71 @@
     -moz-box-shadow:    3px 3px 19px 0px rgba(50, 50, 50, 0.49);
     box-shadow:         3px 3px 19px 0px rgba(50, 50, 50, 0.49);
 }
+.App{
+  width:100%;
+  font-family:sans;
+  background-color: whitesmoke;
+}
+.mainCarousel{
+  
+  -animation-name: animation_move;
+  -animation-duration: 1.5s;
+  -animation-timing-function: linear;
+  -animation-fill-mode: both;
+}
+@keyframes animation_move {
+  0% {
+      -webkit-transform: translateX(1000px) translateY(0px) scale(1);
+  }
+
+  100% {
+      -webkit-transform: translateX(0px) translateY(0px) scale(1);
+  }
+}
+.typing{
+  font-size: x-large;
+  animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
+}
+.typingInactive{
+  display:none;
+}
+
+/* @font-face {
+  font-family: 'Noto Sans KR';
+  font-weight: 300;
+  src: url('/fonts/NotoSansKR-Light.otf') format('woff2'),
+    url('/fonts/NotoSansKR-Light.otf') format('woff'),
+    url('/fonts/NotoSansKR-Light.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-weight: 400;
+  src: url('/fonts/NotoSansKR-Regular.otf') format('woff2'),
+    url('/fonts/NotoSansKR-Regular.otf') format('woff'),
+    url('/fonts/NotoSansKR-Regular.otf') format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-weight: 500;
+  src: url('/fonts/NotoSansKR-Medium.otf') format('woff2');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-weight: 700;
+  src: url('/fonts/NotoSansKR-Bold.otf') format('woff2'),
+    url('/fonts/NotoSansKR-Bold.otf') format('woff'),
+    url('/fonts/NotoSansKR-Bold.otf') format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+} */

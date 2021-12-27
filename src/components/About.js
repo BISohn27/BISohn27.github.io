@@ -3,7 +3,6 @@ import '../css/About.css';
 import { FaQuoteLeft,FaQuoteRight } from "react-icons/fa";
 
 export default function About() {
-    console.log(process.env.PUBLIC_URL);
     return(
         <div id="About">
             <div id="aboutHeader">
